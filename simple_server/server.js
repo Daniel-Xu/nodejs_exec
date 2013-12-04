@@ -6,12 +6,7 @@ var start = function(route, handle){
     //path dispatch
     var pathname = url.parse(request.url).pathname;
     console.log("request for "+pathname+" received");
-    var content = route(pathname, handle);
-    response.writeHead(200, {"Content-Type": "text/plain"}) ;
-
-    response.write(content);
-    response.end();
-
+    route(pathname, handle, response);
   }).listen(9090);
   console.log("server started");
 }
