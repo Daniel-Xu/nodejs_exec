@@ -6,7 +6,23 @@ var start = function(route, handle){
     //path dispatch
     var pathname = url.parse(request.url).pathname;
     console.log("request for "+pathname+" received");
-    route(pathname, handle, response);
+
+    request.setEncoding("utf8");
+
+
+    var postData = "";
+    //add listener
+    request.addListener("data", function(postDataChunk){
+      postData += postDataChunk; 
+    
+      console.log("####data chunk coming:### "+ postDataChunk);
+    });
+
+    request.addListener("end", function(){
+      route(pathname, handle, response, postData);
+    });
+
+
   }).listen(9090);
   console.log("server started");
 }
