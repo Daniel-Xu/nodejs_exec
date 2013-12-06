@@ -7,20 +7,19 @@ var start = function(route, handle){
     var pathname = url.parse(request.url).pathname;
     console.log("request for "+pathname+" received");
 
-    request.setEncoding("utf8");
-
-
-    var postData = "";
+    //this will cause a bug in formidable's parsing
+    //request.setEncoding("utf8");
+    //var postData = "";
     //add listener
-    request.addListener("data", function(postDataChunk){
-      postData += postDataChunk; 
+    //request.addListener("data", function(postDataChunk){
+      //postData += postDataChunk; 
     
-      console.log("####data chunk coming:### "+ postDataChunk);
-    });
+      //console.log("####data chunk coming:### "+ postDataChunk);
+    //});
 
-    request.addListener("end", function(){
-      route(pathname, handle, response, postData);
-    });
+    //request.addListener("end", function(){
+    route(pathname, handle, response, request);
+    //});
 
 
   }).listen(9090);

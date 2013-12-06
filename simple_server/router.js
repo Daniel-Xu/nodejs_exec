@@ -1,6 +1,6 @@
-var route = function(path, handle, response, postData){
+var route = function(path, handle, response, request){
   if (typeof handle[path] === 'function') {
-    handle[path](response, postData);
+    handle[path](response, request);
   } else {
     console.log("No path for "+ path); 
     response.writeHead(404, {"Content-Type": "text/plain"});
