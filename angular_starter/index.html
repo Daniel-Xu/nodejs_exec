@@ -66,10 +66,9 @@
             name: $scope.new_name,
             age:  $scope.new_age
           }) 
+          $scope.new_age  = '';
+          $scope.new_name = '';
         };
-
-        $scope.new_age  = '';
-        $scope.new_name = '';
 
         $scope.remove = function(index){
           $scope.names.splice(index, 1);
