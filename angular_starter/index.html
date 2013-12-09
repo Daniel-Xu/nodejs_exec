@@ -18,10 +18,14 @@
         <li ng-repeat="name in names | filter:search">
           {{name.name}}:{{name.age}}
           <button class="btn btn-primary" ng-click="remove($index)">x</button>
+          <span ng-show="$first">first</span>
+          <span ng-show="$middle">middle</span>
+          <span ng-show="$last">last</span>
         </li>
       </ul>
 
 
+      <span>There are {{names.length}} in the apartment</span>
       <div>
         <label for="name">Name:</label>
         <input ng-model="new_name">
@@ -32,6 +36,21 @@
         <br>
         <button ng-click="add()">add</button>
       </div>
+      
+      <!--if here no ng-model, the name cannot show -->
+      <select  ng-model="selected_person" ng-options="person.name for person in names | filter:search"><option value="">choose a person</option></select>
+      <span>{{selected_person.name}} {{selected_person.age}}</span>
+      
+      <div>
+        <label for="name">Name:</label>
+        <input ng-model="selected_person.name">
+        <br>
+
+        <label for="age">Age:</label>
+        <input type="number" ng-model="selected_person.age">
+        <br>
+      </div>
+
     </div>
 
     <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
