@@ -1,0 +1,27 @@
+{
+  "name": "helloworld",
+  "version": "0.0.0",
+  "description": "my test for grunt",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-uglify": "~0.2.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "keywords": [
+    "test"
+  ],
+  "author": "daniel",
+  "license": "BSD",
+
+  "preferGlobal": "true",
+
+  "bin": {
+    "filesearch": "src/app.js"
+  }
+}
+
