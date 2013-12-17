@@ -24,14 +24,14 @@ var split = require("split");
 var through = require('through');
 var tr = through(write, end);
 
-var n = 0;
+var n = 1;
 function write (line){
-  n++;
   if(n%2 === 0) {
-    this.queue(line.toString().toUpperCase());
+    this.queue(line.toString().toUpperCase()+"\n");
   }else {
-    this.queue(line.toString());
+    this.queue(line.toString().toLowerCase()+"\n");
   }
+  n++;
 }
 
 //var a = funciotn(){
