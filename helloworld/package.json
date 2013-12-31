@@ -6,7 +6,9 @@
   "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.2",
-    "grunt-contrib-uglify": "~0.2.7"
+    "grunt-contrib-uglify": "~0.2.7",
+    "gulp": "~3.2.1",
+    "gulp-uglify": "~0.1.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,11 +19,8 @@
   ],
   "author": "daniel",
   "license": "BSD",
-
   "preferGlobal": "true",
-
   "bin": {
     "filesearch": "src/app.js"
   }
 }
-

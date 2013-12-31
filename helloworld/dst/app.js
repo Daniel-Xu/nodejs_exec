@@ -1,0 +1,1 @@
+function User(e){var o=this;for(var n in e)!function(n){o["get"+n]=function(){return e[n]},o["set"+n]=function(o){e[n]=o}}(n)}var user=new User({name:"Bob",age:44}),user2=new User({favor:"girl",hobi:"football"});console.log(user.getname()),console.log(user.getage()),console.log(user2.getfavor()),console.log(user2.gethobi());
