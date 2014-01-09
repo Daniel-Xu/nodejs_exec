@@ -10,7 +10,7 @@ function repeat(operation, num) {
 
 function trampoline(fn) {
   // You probably want to implement a trampoline!
-  if(fn && typeof fn === 'function') {
+  while(fn && typeof fn === 'function') {
       fn = fn()
   }
 }
