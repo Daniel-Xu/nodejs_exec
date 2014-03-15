@@ -12,4 +12,7 @@ function attachTitle(){
 
 
 defer.promise.then(attachTitle).then(console.log)
+//defer.promise.then(function(val){
+    //return "DR." + val
+//}).then(console.log)
 defer.resolve('MANHATTAN')
