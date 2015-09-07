@@ -1,0 +1,19 @@
+{
+  "name": "chat-room",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "daniel_xu",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.4.1"
+  },
+  "dependencies": {
+    "colors": "^1.1.2"
+  }
+}
