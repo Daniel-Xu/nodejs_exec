@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html>
 
+  <style>
+    .confirm {
+      color: black;
+      background: yellow;
+    }
+  </style>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
@@ -8,7 +14,9 @@
     link
   </head>
   <body>
-    body
+    <ul id="messages"></ul>
+    <input type="text" id='content'/>
+    <button type="submit" id='send'></button>
   </body>
   <script src="/socket.io/socket.io.js"></script>
   <script src='/chat.js'></script>

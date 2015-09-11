@@ -16,8 +16,18 @@ io.on('connection', function(socket) {
   socket.on('disconnect', function() {
     console.log('connection disconnected');
   });
+
+  socket.on('join', function(name) {
+    socket.nickname = name;
+    console.log('welcome ' + name + ' !');
+    socket.broadcast.emit('notification', name + ' joined the channel');
+  });
+
+  socket.on('text', function(msg, fn) {
+    socket.broadcast.emit('text', socket.nickname, msg);
+    //closure
+    fn(Date.now());
+  });
 });
-
-
 
 
